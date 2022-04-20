@@ -17,9 +17,17 @@ router.post('/',[
     }
    
     // console.log(req.body);
-    const user = User(req.body);
-    user.save()
-    res.send(req.body);
+    User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    }).then(user => res.json(user))
+    .catch(err => {console.log(err)
+        res.json({error: 'please enter unique email',
+        message : err.message
+      })
+    })  
+    
 
 })
 
