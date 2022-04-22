@@ -4,8 +4,9 @@ const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
 const { find, findOne } = require('../models/User');
 const bcrypt = require('bcryptjs');     //hash function  password 
-const jwt = require('jsonwebtoken');
+var jwt = require('jsonwebtoken');
 const JWT_SECRET = "youareawesome&";
+const fetchuser = require('../middleware/fetchuser')
 
 //ROUTE 1: CREATE USER
 router.post('/createuser', [
@@ -101,9 +102,18 @@ router.post('/login', [
 
 })
 
+//ROUTE 3 : getuser
 
-
-
+router.post('/getuser', fetchuser , async(req,res )=>{
+    try{
+        userId = req.user.id
+        const user = await User.findById(userId).select("-password");
+        res.send(user);
+    }catch (error) {
+      console.log(error.mesage);
+      res.status(500).json({ errors: "some error occured" });
+    }
+})
 
 module.exports = router
 
