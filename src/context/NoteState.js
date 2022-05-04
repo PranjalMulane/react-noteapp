@@ -14,7 +14,7 @@ const NoteState=(props)=>{
                 "name": "pooja",
                 "role":"tester"
             })
-        },1000);
+        },2000);
     }
 
     return(
