@@ -3,7 +3,7 @@ import NoteContext from "./NoteContext";
 
 const NoteState=(props)=>{
    
-    
+
     const noteInitial = 
     [
       {
@@ -84,18 +84,29 @@ const NoteState=(props)=>{
     }
 
     //update
-    const updateNote=()=>{
+    const editNote=(id,title,description, tag)=>{
+        for (let index = 0; index < notes.length; index++) {
+          const element = notes[index];
+          if(element._id == id){
+            element.title = title;
+            element.description = description;
+            element.tag = tag;
 
+          }
+          
+        }
     }
 
     //delete
-    const deleteNote=()=>{
-
+    const deleteNote=(id)=>{
+        console.log("note deleted : " + id);
+        const newNotes = notes.filter((note)=>{ return note._id !== id})
+        setNotes(newNotes);
     }
 
 
     return(
-        <NoteContext.Provider value={{notes, addNote, updateNote, deleteNote}}>
+        <NoteContext.Provider value={{notes, addNote, editNote, deleteNote}}>
             {props.children}
         </NoteContext.Provider>
     )
