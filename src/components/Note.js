@@ -25,8 +25,8 @@ export const Note = () => {
   const handleClick = (e)=>{
     e.preventDefault();
    // setNote({title: "", description: "", tag: ""})
-   editNote(note.id, note.etitle, note.edescription, note.etag)
-      refClose.current.click();
+    editNote(note.id, note.etitle, note.edescription, note.etag)
+    refClose.current.click();
     
   }
 
@@ -41,7 +41,7 @@ export const Note = () => {
       <AddNote />
       <div>
         {/* Button trigger modal */}
-        <button type="button" ref={ref} className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Launch demo modal
         </button>
         {/* Modal */}
@@ -75,7 +75,7 @@ export const Note = () => {
               </div>
               <div className="modal-footer">
                 <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button  onClick={handleClick} type="button" className="btn btn-primary"   >Edit Note</button>
+                <button  onClick={handleClick} type="button" className="btn btn-outline-secondary"   >Edit Note</button>
               </div>
             </div>
           </div>
