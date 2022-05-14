@@ -7,8 +7,8 @@ export const Noteitem = (props) => {
   const context = useContext(NoteContext)
 
 
-  const {note} = props;
-  const {deleteNote, updateNote} = context;
+  const {note, updateNote} = props;
+  const {deleteNote} = context;
   return (
     <>
 

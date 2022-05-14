@@ -12,7 +12,7 @@ export const Note = () => {
   const ref = useRef(null);
   const refClose = useRef(null);
   const { notes, getNote, editNote } = context;
-  const [note, setNote] = useState({ etitle: "", edescription: "", etag: "general" })
+  const [note, setNote] = useState({ id:"",etitle: "", edescription: "", etag: "general" })
   useEffect(() => {
     getNote()
   }, [])
@@ -24,8 +24,10 @@ export const Note = () => {
 
   const handleClick = (e)=>{
     e.preventDefault();
+   // setNote({title: "", description: "", tag: ""})
+   editNote(note.id, note.etitle, note.edescription, note.etag)
       refClose.current.click();
-    setNote({title: "", description: "", tag: ""})
+    
   }
 
     const onChange = (e)=>{
@@ -72,8 +74,8 @@ export const Note = () => {
       </form>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" ref={refClose} className="btn btn-primary"  onClick={handleClick}  >Edit Note</button>
+                <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button  onClick={handleClick} type="button" className="btn btn-primary"   >Edit Note</button>
               </div>
             </div>
           </div>
