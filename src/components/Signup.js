@@ -22,7 +22,7 @@ const Signup = (props) => {
           // Save the auth token and redirect
           localStorage.setItem('token', json.authtoken); 
           navigate("/login");
-          
+
 
       }
       else{
@@ -38,39 +38,7 @@ const Signup = (props) => {
 
 
 
-// const Signup = () => {
 
-  
-//   let navigate =  useNavigate();
-//   const [credentials, setCredentials] = useState({name:"", email:"", password:"" ,cpassword:""})
-  
-//   const handleSubmit = async(e) =>{
-//     e.preventDefalut();
-//     const{name, email, password}=credentials;
-//       const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
-//           method: 'POST',
-//           headers: {
-//             'Content-Type': 'application/json'
-//           },
-//           body: JSON.stringify({ name, email, password })
-//         });
-    
-//         const json = await response.json();
-//         console.log(json);
-//         if(json.success){
-//           localStorage.setItem('token',json.authtoken)
-//           navigate('/login');
-//         }
-//         else{
-//           alert("Invalid Credentials");
-//         }
-       
-        
-//   }
-   
-//   const onChange = (e)=>{
-//     setCredentials({...credentials, [e.target.name]: e.target.value})
-// }
   return (
     <>
      <div className="container">

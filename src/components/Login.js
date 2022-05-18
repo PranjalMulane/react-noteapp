@@ -33,7 +33,9 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+      <div className="container mx-12">
+      <h2>Login</h2>
+      <h5>Welcome Back!</h5>
             <form  onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
