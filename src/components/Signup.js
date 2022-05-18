@@ -1,39 +1,76 @@
 import React, { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
 
-const Signup = () => {
 
-  
-  let navigate =  useNavigate();
-  const [credentials, setCredentials] = useState({name:"", email:"", password:"" ,cpassword:""})
-  
-  const handleSubmit = async(e) =>{
-    e.preventDefalut();
-    const{name, email, password}=credentials;
-      const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+const Signup = (props) => {
+  const [credentials, setCredentials] = useState({name:"", email: "", password: "", cpassword:""}) 
+  let navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      const{name, email, password} = credentials;
+      const response = await fetch("http://localhost:5000/api/auth/createuser", {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+              'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ name, email, password })
-        });
+          body: JSON.stringify({name, email, password})
+      });
+      const json = await response.json()
+      console.log(json);
+      if (json.success){
+          // Save the auth token and redirect
+          localStorage.setItem('token', json.authtoken); 
+          navigate("/login");
+          
+
+      }
+      else{
+          alert("Invalid credentials");
+      }
+  }
+
+  const onChange = (e)=>{
+      setCredentials({...credentials, [e.target.name]: e.target.value})
+  }
+
+
+
+
+
+// const Signup = () => {
+
+  
+//   let navigate =  useNavigate();
+//   const [credentials, setCredentials] = useState({name:"", email:"", password:"" ,cpassword:""})
+  
+//   const handleSubmit = async(e) =>{
+//     e.preventDefalut();
+//     const{name, email, password}=credentials;
+//       const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json'
+//           },
+//           body: JSON.stringify({ name, email, password })
+//         });
     
-        const json = await response.json();
-        console.log(json);
-        if(json.success){
-          localStorage.setItem('token',json.authtoken)
-          navigate('/home');
-        }
-        else{
-          alert("Invalid Credentials");
-        }
+//         const json = await response.json();
+//         console.log(json);
+//         if(json.success){
+//           localStorage.setItem('token',json.authtoken)
+//           navigate('/login');
+//         }
+//         else{
+//           alert("Invalid Credentials");
+//         }
        
         
-  }
+//   }
    
-  const onChange = (e)=>{
-    setCredentials({...credentials, [e.target.name]: e.target.value})
-}
+//   const onChange = (e)=>{
+//     setCredentials({...credentials, [e.target.name]: e.target.value})
+// }
   return (
     <>
      <div className="container">
