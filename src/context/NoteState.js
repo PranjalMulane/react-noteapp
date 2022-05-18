@@ -14,7 +14,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1MDk4NDM3Mn0.NJM4s_FBNetDyr-iO75ebr2iIqpUVbmEFazlygpOTXQ"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1Mjg3MjM5NH0.Ts8YwibXj_FDWCwWI5EwFqtLNffdhaUAaXo2oZaqkP8"
       }
     });
     const json = await response.json()
@@ -27,7 +27,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1MDk4NDM3Mn0.NJM4s_FBNetDyr-iO75ebr2iIqpUVbmEFazlygpOTXQ"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1Mjg3MjM5NH0.Ts8YwibXj_FDWCwWI5EwFqtLNffdhaUAaXo2oZaqkP8"
       },
       body: JSON.stringify({ title, description, tag })
     });
@@ -43,7 +43,7 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1MDk4NDM3Mn0.NJM4s_FBNetDyr-iO75ebr2iIqpUVbmEFazlygpOTXQ"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1Mjg3MjM5NH0.Ts8YwibXj_FDWCwWI5EwFqtLNffdhaUAaXo2oZaqkP8"
       }
     });
     const json = response.json();
@@ -58,7 +58,7 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1MDk4NDM3Mn0.NJM4s_FBNetDyr-iO75ebr2iIqpUVbmEFazlygpOTXQ"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI2ODA1YTQ2ZjZhZjVhNjRlNGFkZjU5In0sImlhdCI6MTY1Mjg3MjM5NH0.Ts8YwibXj_FDWCwWI5EwFqtLNffdhaUAaXo2oZaqkP8"
       },
       body: JSON.stringify({ title, description, tag })
     });

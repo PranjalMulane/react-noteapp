@@ -5,7 +5,6 @@ const Signup = () => {
 
   
   let navigate =  useNavigate();
-
   const [credentials, setCredentials] = useState({name:"", email:"", password:"" ,cpassword:""})
   
   const handleSubmit = async(e) =>{
@@ -21,9 +20,6 @@ const Signup = () => {
     
         const json = await response.json();
         console.log(json);
-
-        
-
         if(json.success){
           localStorage.setItem('token',json.authtoken)
           navigate('/home');
