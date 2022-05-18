@@ -40,3 +40,15 @@ h2{
   color: #005555;
 }
 
+.modal-header, .modal-footer{
+  background-color: #005555;
+  color: white;
+}
+
+.navbar{
+  background-color: #005555;
+  text-decoration: none;
+  color: white;
+
+}
+

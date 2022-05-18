@@ -3,7 +3,6 @@ import NoteContext from "./NoteContext";
 
 const NoteState = (props) => {
 
-
   const host = "http://localhost:5000"
   const noteInitial = []
   const [notes, setNotes] = useState(noteInitial)
@@ -21,7 +20,6 @@ const NoteState = (props) => {
     const json = await response.json()
     setNotes(json)
   }
-
   //add 
   const addNote = async (title, description, tag) => {
     //      http://localhost:5000/api/notes/addnote
@@ -37,10 +35,6 @@ const NoteState = (props) => {
     const note = await response.json();
     setNotes(notes.concat(note))
   }
-
-
-
-
   //delete            
   const deleteNote = async (id) => {
     console.log("delete note" ,id);

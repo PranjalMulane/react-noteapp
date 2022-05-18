@@ -49,7 +49,7 @@ export const Note = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 className="modal-title" id="exampleModalLabel">Update Note</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
               </div>
               <div className="modal-body">
@@ -74,8 +74,8 @@ export const Note = () => {
       </form>
               </div>
               <div className="modal-footer">
-                <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button  onClick={handleClick} type="button" className="btn btn-outline-secondary"   >Edit Note</button>
+                <button ref={refClose} type="button" className="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                <button  onClick={handleClick} type="button" className="btn btn-light"   >Edit Note</button>
               </div>
             </div>
           </div>
