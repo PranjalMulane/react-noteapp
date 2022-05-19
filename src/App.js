@@ -20,7 +20,7 @@ function App() {
         <BrowserRouter>
 
           <Navbar />
-          <Alert message="~Welcome to my app"/>
+          {/* <Alert message="~Welcome to my app"/> */}
           <div className="container my-3">
           <Routes>
             <Route exact path="Home" element={<Home />} />

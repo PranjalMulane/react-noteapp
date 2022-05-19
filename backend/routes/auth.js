@@ -54,6 +54,7 @@ router.post('/createuser', [
     // console.log(authtoken)
     success = true;
     res.json({success, authtoken})
+    
   } catch (error) {
     console.log(error.mesage);
     res.status(500).json({ errors: "some error occured" });
